@@ -50,7 +50,6 @@ jobs:
 
       # Publica no npm
       - name: Publish to npm
-        if: steps.changesets.outputs.published == 'true'
         run: npx changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
