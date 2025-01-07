@@ -1,0 +1,3 @@
+---
+"@erick-ui/react": major
+---
