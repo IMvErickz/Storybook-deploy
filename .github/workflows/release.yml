@@ -3,7 +3,7 @@ name: Release Package
 on:
   push:
     branches:
-      - main # Branch que será monitorada para liberar versões
+      - main  # A branch principal que será monitorada para liberar versões
 
 jobs:
   release:
@@ -36,9 +36,13 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add .
-          git commit -m "ci: version packages"
+          git add .  # Adiciona as mudanças de versão e changelog
+          git commit -m "ci: version packages"  # Commit da versão
           git push
+
+      # Executa o build dos pacotes antes de publicar (usando turbo)
+      - name: Build packages
+        run: npm run build  # Ou "turbo run build" se necessário
 
       # Publica no npm
       - name: Publish to npm
