@@ -30,6 +30,11 @@ jobs:
         run: ls -la .changeset/
 
       # Verifica se há releases pendentes no Changesets
+
+      - name: Create Release changeset
+        id: changesetsrelease
+        run: npx changeset --yes
+
       - name: Create Release
         id: changesets
         run: npx changeset version --yes
