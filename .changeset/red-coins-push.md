@@ -1,3 +1,0 @@
----
-"@erick-ui/react": minor
----
