@@ -25,6 +25,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Listando arquivos changeset para depuração
+      - name: List changeset files
+        run: ls -la .changeset/
+
       # Verifica se há releases pendentes no Changesets
       - name: Create Release
         id: changesets
